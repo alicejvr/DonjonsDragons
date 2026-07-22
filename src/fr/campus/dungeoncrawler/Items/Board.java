@@ -1,14 +1,14 @@
 package fr.campus.dungeoncrawler.Items;
 
 public class Board {
-    private int cells = 64;
+    private int length = 64;
 
 // Constructors
 
 // Getters
 
-public int getCells() {
-    return cells;
+public int getLength() {
+    return length;
 }
 
 // Setters

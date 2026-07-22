@@ -8,6 +8,10 @@ public class DefensiveEquipment {
 // Constructors
 
 
+    public DefensiveEquipment(String name) {
+        this.name = name;
+    }
+
     // Getters
     public String getName() {
         return name;
