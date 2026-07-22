@@ -10,7 +10,7 @@ public class Game {
     Menu menu = new Menu();
     private int playerPosition = 0;     // on initialise la position du player à la case 0
 
-    public void welcome() {
+    public void start() {
 
         String playerInputIntro = menu.askPlayerString("----------------- Bienvenue sur Dungeon Crawler ! -----------------\nFaites votre choix :\n1 = Créer un nouveau personnage\n2 = Quitter le jeu");
         if (playerInputIntro.equals("1")) {
@@ -54,15 +54,15 @@ public class Game {
         Board board = new Board(); // on crée l'instance de Board
         System.out.println("Position initiale du joueur : case " + playerPosition);
 
-        while (playerPosition < board.getCells()) {     // tant que la position du joueur est inférieure à 64,
+        while (playerPosition < board.getLength()) {     // tant que la position du joueur est inférieure à 64,
 
             Dice dice = new Dice();
             menu.askPlayerRollDice();       // on demande au player de lancer le dé
 
             playerPosition = playerPosition + dice.rollDice();  // la position du joueur avance en fonction du return de rollDice
 
-            if (playerPosition >= board.getCells() ) {        // mais si la position dépasse 64
-                playerPosition = board.getCells();              // alors la position vaut 64
+            if (playerPosition >= board.getLength() ) {        // mais si la position dépasse 64
+                playerPosition = board.getLength();              // alors la position vaut 64
                 System.out.println("Le joueur est sur la case "+ playerPosition +"\nFin de partie !\n");
                 String playerEndGame = menu.askPlayerString("Choisissez :\n1 = Quitter le jeu\n2 = Recommencer une partie");
                 if (playerEndGame.equals("1")) {
@@ -70,7 +70,7 @@ public class Game {
                     System.exit(1);     // on quitte le jeu
                 } else {            // le joueur veut recommencer une partie
                     playerPosition = 0;         // donc on initialiste de nouveau sa position à 0
-                    welcome();                  // et on relance le menu Welcome
+                    start();                  // et on relance le menu Welcome
                 }
             }
 

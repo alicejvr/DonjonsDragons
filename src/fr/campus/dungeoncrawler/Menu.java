@@ -20,11 +20,10 @@ public class Menu {
 
     public void askPlayerRollDice() {
         System.out.println("Lancer le dé en tapant sur 'Entrée'");
-        System.out.print("> ");
+        System.out.print("[ lancement du dé ]");
         String input = this.scanner.nextLine();
         if (input.isEmpty()) {
             Dice dice = new Dice();
-            // int roll = dice.rollDice();
         }
 
 
