@@ -1,6 +1,6 @@
-package fr.campus.dungeoncrawler.Equipment;
+package fr.campus.dungeoncrawler.Equipment.Offensive;
 
-public class OffensiveEquipment {
+public abstract class OffensiveEquipment {
     private String name;
     private int attack;
     private String type;                    // weapon ou spell
@@ -47,10 +47,10 @@ public class OffensiveEquipment {
 
     @Override
     public String toString() {
-        return "OffensiveEquipment { " +
-                "name = '" + name + '\'' +
-                ", attackLevel = "  + attack +
-                ", type = '" + type + '\'' +
+        return "OffensiveEquipment{" +
+                "name='" + name + '\'' +
+                ", attack=" + attack +
+                ", type='" + type + '\'' +
                 '}';
     }
 }

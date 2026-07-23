@@ -3,6 +3,7 @@ package fr.campus.dungeoncrawler;
 import fr.campus.dungeoncrawler.Character.Warrior;
 import fr.campus.dungeoncrawler.Character.Wizard;
 import fr.campus.dungeoncrawler.Character.Character;
+import fr.campus.dungeoncrawler.Exceptions.OutOfBoardException;
 import fr.campus.dungeoncrawler.Items.Dice;
 import fr.campus.dungeoncrawler.Items.Board;
 
@@ -46,11 +47,16 @@ public class Game {
         }
         String playerStart = menu.askPlayerString("Tapez 'Go' pour lancer votre partie !");
         if (playerStart.equalsIgnoreCase("Go")) {   // si le player tape go ça lance le jeu
-            playGame();
+            try {
+                playGame();
+            } catch (OutOfBoardException e) {
+                System.out.println("On sort du plateau ça va PAS !");
+            }
         }
     }
 
     public void playGame() {
+        throw new OutOfBoardException("Saisie erronee : chaine vide");
         Board board = new Board(); // on crée l'instance de Board
         System.out.println("Position initiale du joueur : case " + playerPosition);
 
@@ -63,6 +69,7 @@ public class Game {
 
             if (playerPosition >= board.getLength() ) {        // mais si la position dépasse 64
                 playerPosition = board.getLength();              // alors la position vaut 64
+
                 System.out.println("Le joueur est sur la case "+ playerPosition +"\nFin de partie !\n");
                 String playerEndGame = menu.askPlayerString("Choisissez :\n1 = Quitter le jeu\n2 = Recommencer une partie");
                 if (playerEndGame.equals("1")) {

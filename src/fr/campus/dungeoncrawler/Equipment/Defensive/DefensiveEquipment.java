@@ -1,6 +1,6 @@
-package fr.campus.dungeoncrawler.Equipment;
+package fr.campus.dungeoncrawler.Equipment.Defensive;
 
-public class DefensiveEquipment {
+public abstract class DefensiveEquipment {
     private String name = "rock";
     private int defenseLevel = 0;
     private String type;                   // shield ou potion

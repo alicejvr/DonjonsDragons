@@ -1,20 +1,20 @@
 package fr.campus.dungeoncrawler.Character;
 
-import fr.campus.dungeoncrawler.Equipment.OffensiveEquipment;
+import fr.campus.dungeoncrawler.Equipment.Offensive.OffensiveEquipment;
 
 public abstract class Character {
-    private String type = "Settler";                            // warrior ou wizard
-    private String name = "Jean Bono";
-    private int attackLevel = 1;
-    private int lifeLevel = 2;
-    private OffensiveEquipment offensiveEquipment = new OffensiveEquipment("Bâton", 2, "weapon");
+    private String type;                            // warrior ou wizard
+    private String name;
+    private int attackLevel;
+    private int lifeLevel;
+    private OffensiveEquipment offensiveEquipment;
 
 
 // Constructors
 
     protected Character(String type, String name, int attackLevel, int lifeLevel, OffensiveEquipment offensiveEquipment){
-        this.type = type; // this.name = attribut de l'objet, vide tant qu'on a pas créé l'objet
-        // name = paramètre du constructeur
+        this.type = type; // this.type = attribut de l'objet, vide tant qu'on a pas créé l'objet
+        // type = paramètre du constructeur
         this.name = name;
         this.attackLevel = attackLevel;
         this.lifeLevel = lifeLevel;
