@@ -14,7 +14,6 @@ public class Dice {
 
 
 // Constructors
-
     public Dice() {
         this.sides = 6;
     }

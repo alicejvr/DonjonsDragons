@@ -1,15 +1,16 @@
 package fr.campus.dungeoncrawler.Equipment.Defensive;
 
 public abstract class DefensiveEquipment {
-    private String name = "rock";
-    private int defenseLevel = 0;
+    private String name;
+    private int defenseLevel;
     private String type;                   // shield ou potion
 
 // Constructors
 
-
-    public DefensiveEquipment(String name) {
+    public DefensiveEquipment(String name,  int defenseLevel, String type) {
         this.name = name;
+        this.defenseLevel = defenseLevel;
+        this.type = type;
     }
 
     // Getters

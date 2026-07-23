@@ -7,6 +7,11 @@ public class Menu {
 
     private final Scanner scanner = new Scanner(System.in);
 
+    /**
+     *
+     * @param question
+     * @return
+     */
     public String askPlayerString(String question) {        // fonction qui permet d'automatiser le menu et la question posée au player
         System.out.println(question);
         System.out.print("> ");                              // indique visuellement le champ de réponse
@@ -20,7 +25,6 @@ public class Menu {
 
     public void askPlayerRollDice() {
         System.out.println("Lancer le dé en tapant sur 'Entrée'");
-        System.out.print("[ lancement du dé ]");
         String input = this.scanner.nextLine();
         if (input.isEmpty()) {
             Dice dice = new Dice();
