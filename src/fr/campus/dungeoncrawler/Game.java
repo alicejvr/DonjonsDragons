@@ -47,16 +47,17 @@ public class Game {
         }
         String playerStart = menu.askPlayerString("Tapez 'Go' pour lancer votre partie !");
         if (playerStart.equalsIgnoreCase("Go")) {   // si le player tape go ça lance le jeu
-            try {
+            /* try {
                 playGame();
             } catch (OutOfBoardException e) {
                 System.out.println("On sort du plateau ça va PAS !");
-            }
+            }*/
+            playGame();
         }
     }
 
     public void playGame() {
-        throw new OutOfBoardException("Saisie erronee : chaine vide");
+        // throw new OutOfBoardException("Saisie erronee : chaine vide");
         Board board = new Board(); // on crée l'instance de Board
         System.out.println("Position initiale du joueur : case " + playerPosition);
 
