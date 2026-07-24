@@ -16,7 +16,7 @@ public abstract class Character {
 // Constructors
 
 
-    protected Character(String type, String name, int attackLevel, int lifePoints, OffensiveEquipment offensiveEquipment){
+    protected Character(String type, String name, int attackLevel, int lifePoints, int maxLifePoints, OffensiveEquipment offensiveEquipment) {
         this.type = type; // this.type = attribut de l'objet, vide tant qu'on a pas créé l'objet
         // type = paramètre du constructeur
         this.name = name;
@@ -94,14 +94,13 @@ public abstract class Character {
 
     @Override
     public String toString() {
-        return "Character{" +
-                "type='" + type + '\'' +
-                ", name='" + name + '\'' +
-                ", attackLevel=" + attackLevel +
-                ", lifePoints=" + lifePoints +
-                ", maxLifePoints=" + maxLifePoints +
-                ", offensiveEquipment=" + offensiveEquipment +
-                ", defensiveEquipment=" + defensiveEquipment +
-                '}';
+        return "        +---------------+ \n        Ton personnage est un " + type + ",\n" +
+                "        il s'appelle " + name + ",\n" +
+                "        il a " + attackLevel + " points d'attaque " +
+                lifePoints + " points de vie (et peut en avoir jusqu'à " +
+                maxLifePoints + ")," +
+                "\n        son équpipement offensif c'est : " + offensiveEquipment +
+                ",\n        et son équipement défensif c'est : " + defensiveEquipment + "." +
+                "\n        +---------------+ \n";
     }
 }

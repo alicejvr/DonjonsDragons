@@ -2,14 +2,14 @@ package fr.campus.dungeoncrawler.Equipment.Defensive;
 
 public abstract class DefensiveEquipment {
     private String name;
-    private int defenseLevel;
+    private int defense;
     private String type;                   // shield ou potion
 
 // Constructors
 
-    public DefensiveEquipment(String name,  int defenseLevel, String type) {
+    public DefensiveEquipment(String name,  int defense, String type) {
         this.name = name;
-        this.defenseLevel = defenseLevel;
+        this.defense = defense;
         this.type = type;
     }
 
@@ -18,8 +18,8 @@ public abstract class DefensiveEquipment {
         return name;
     }
 
-    public int getDefenseLevel() {
-        return defenseLevel;
+    public int getDefense() {
+        return defense;
     }
 
     public String getType() {
@@ -33,8 +33,8 @@ public abstract class DefensiveEquipment {
         this.name = newName;
     }
 
-    public void setDefenseLevel(int newDefenseLevel) {
-        this.defenseLevel = newDefenseLevel;
+    public void setDefense(int newDefense) {
+        this.defense = newDefense;
     }
 
     public void setType(String newType) {
@@ -48,7 +48,7 @@ public abstract class DefensiveEquipment {
     public String toString() {
         return "DefensiveEquipment{" +
                 "name='" + name + '\'' +
-                ", defenseLevel=" + defenseLevel +
+                ", defense=" + defense +
                 ", type='" + type + '\'' +
                 '}';
     }

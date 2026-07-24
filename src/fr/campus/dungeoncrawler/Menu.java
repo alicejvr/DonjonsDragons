@@ -1,6 +1,7 @@
 package fr.campus.dungeoncrawler;
 
 import fr.campus.dungeoncrawler.Items.Dice;
+
 import java.util.Scanner;
 
 public class Menu {
@@ -33,5 +34,7 @@ public class Menu {
 
     }
 }
+
+
 
 

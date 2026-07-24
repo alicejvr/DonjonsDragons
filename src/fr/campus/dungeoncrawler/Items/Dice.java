@@ -1,11 +1,11 @@
-package fr.campus.dungeoncrawler.Items;
 
+package fr.campus.dungeoncrawler.Items;
 
 public class Dice {
     private int sides;
 
 
-// Actions :
+    // Actions :
     public int rollDice() {
         int resultDice = (int) (Math.random() * sides) + 1;
         System.out.println("Résultat du dé : " + resultDice);
@@ -13,9 +13,9 @@ public class Dice {
     }
 
 
-// Constructors
+    // Constructors
     public Dice() {
-        this.sides = 6;
+        this.sides = 1;
     }
 
 // Getter

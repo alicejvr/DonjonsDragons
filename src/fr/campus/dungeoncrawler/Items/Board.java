@@ -3,16 +3,22 @@ package fr.campus.dungeoncrawler.Items;
 import java.util.ArrayList;
 
 public class Board {
-    private int length = 64;
+    private int length;
     private ArrayList<Cell> board = new ArrayList<Cell>();
 
-public int initBoard() {
-    for(int i = 0; i < length; i++){
-        board.add(new Cell());
+    public void initBoard() {
+            board.add(new Cell("vide"));
+            board.add(new Cell("ennemi"));
+            board.add(new Cell("arme"));
+            board.add(new Cell("potion"));
+
     }
-    return board.size();
-}
 // Constructors
+
+    public Board(int length) {
+        this.length = length;
+    }
+
 
 // Getters
 
@@ -20,12 +26,23 @@ public int initBoard() {
     public ArrayList<Cell> getBoard() {
         return board;
     }
-}
+
 
 // Setters
+
+    public void setLength(int length) {
+        this.length = length;
+    }
 
 
 // Méthode toString
 
+    @Override
+    public String toString() {
+        return "Board{" +
+                "length=" + length +
+                ", board=" + board +
+                '}';
+    }
 
-
+}

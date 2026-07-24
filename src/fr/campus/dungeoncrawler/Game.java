@@ -10,7 +10,6 @@ import fr.campus.dungeoncrawler.Items.Board;
 
 public class Game {
     Menu menu = new Menu();
-    private int playerPosition;
 
     public void start() throws OutOfBoardException {
 
@@ -37,7 +36,7 @@ public class Game {
 
         String playerCharacterInfo = menu.askPlayerString("1 = Afficher les infos de " + playerName + "\n2 = Modifier les infos de " + playerName);
         if (playerCharacterInfo.equals("1")) {
-            System.out.println(playerChoice.toString());
+            System.out.println(playerChoice);
         } else {
             String playerModif = menu.askPlayerString("Vous souhaitez modifier :\n1. Son niveau d'attaque\n2. Son niveau de vie");
             if (playerModif.equals("1")) {
@@ -46,7 +45,7 @@ public class Game {
                 menu.askPlayerString("Entrez le nouveau niveau de vie de " + playerName + " :");
             }
         }
-        String playerStart = menu.askPlayerString("Tapez 'Go' pour lancer votre partie !");
+        String playerStart = menu.askPlayerString("Tapez 'go' pour lancer votre partie !");
         if (playerStart.equalsIgnoreCase("Go")) {   // si le player tape go ça lance le jeu
             try {
                 playTurn();
@@ -58,16 +57,17 @@ public class Game {
         }
     }
 
+    // mécanique du jeu : le joueur démarre à la case 0 et parcourt les cases du plateau
     public void playTurn() throws OutOfBoardException {
 
-        Board board = new Board();
+        Board board = new Board(4);
         board.initBoard();
-        playerPosition = 0;      // on initialise la position du player à la case 0
-        System.out.println("Position initiale du joueur : case " + playerPosition);
+        int playerPosition = 0;      // on initialise la position du player à la case 0
+        System.out.println("\nPosition initiale du joueur : case " + playerPosition);
 
-           while (playerPosition < board.getBoard().size()) {     // tant que la position du joueur est inférieure à 64,
+        while (playerPosition <= board.getBoard().size()) {     // tant que la position du joueur est inférieure ou égale à la taille du board,
 
-            Dice dice = new Dice();
+            Dice dice = new Dice();         // on crée un dé
             menu.askPlayerRollDice();       // on demande au player de lancer le dé
 
             playerPosition = playerPosition + dice.rollDice();  // la position du joueur avance en fonction du return de rollDice
@@ -76,7 +76,7 @@ public class Game {
 
                 playerPosition = board.getBoard().size();              // alors la position vaut 64
 
-                System.out.println("Le joueur est sur la case " + playerPosition + "\n\n------------------- Gagné ! Fin de partie ! -------------------\n");
+                System.out.println("Le joueur est sur la case " + playerPosition + "\nContenu de la case : " + board.getBoard().get(playerPosition - 1).getType() + "\n\n------------------- Gagné ! Fin de partie ! -------------------\n");
                 String playerEndGame = menu.askPlayerString("Choisissez :\n1 = Quitter le jeu\n2 = Recommencer une partie");
                 if (playerEndGame.equals("1")) {
                     System.out.println("Vous avez quitté le jeu.");
@@ -89,6 +89,7 @@ public class Game {
             }
 
             System.out.println("Le joueur est sur la case " + playerPosition);
+            System.out.println("Contenu de la case : " + board.getBoard().get(playerPosition - 1).getType());
         }
     }
 
