@@ -1,9 +1,9 @@
 package fr.campus.dungeoncrawler.Equipment.Defensive;
 
 public abstract class DefensiveEquipment {
-    private String name;
-    private int defense;
-    private String type;                   // shield ou potion
+    protected String name;
+    protected int defense;
+    protected String type;                   // shield ou potion
 
 // Constructors
 

@@ -4,26 +4,25 @@ import fr.campus.dungeoncrawler.Equipment.Defensive.DefensiveEquipment;
 import fr.campus.dungeoncrawler.Equipment.Offensive.OffensiveEquipment;
 
 public abstract class Character {
-    private String type;                            // warrior ou wizard
-    private String name;
-    private int attackLevel;
-    private int lifePoints;
-    private int maxLifePoints;
-    private OffensiveEquipment offensiveEquipment;
-    private DefensiveEquipment defensiveEquipment;
+    protected String type;                            // warrior ou wizard
+    protected String name;
+    protected int attackLevel;
+    protected int lifePoints;
+    protected int maxLifePoints;
+    protected OffensiveEquipment offensiveEquipment;
+    protected DefensiveEquipment defensiveEquipment;
 
 
 // Constructors
 
 
-    protected Character(String type, String name, int attackLevel, int lifePoints, int maxLifePoints, OffensiveEquipment offensiveEquipment) {
+    public Character(String type, String name, int attackLevel, int lifePoints, int maxLifePoints, OffensiveEquipment offensiveEquipment, DefensiveEquipment defensiveEquipment ) {
         this.type = type; // this.type = attribut de l'objet, vide tant qu'on a pas créé l'objet
         // type = paramètre du constructeur
         this.name = name;
         this.attackLevel = attackLevel;
         this.lifePoints = lifePoints;
         this.maxLifePoints = maxLifePoints;
-        this.offensiveEquipment = offensiveEquipment;
 
     }
 
@@ -49,6 +48,10 @@ public abstract class Character {
         return lifePoints;
     }
 
+    public int getMaxLifePoints() {
+        return maxLifePoints;
+    }
+
     public OffensiveEquipment getOffensiveEquipment() {
         return offensiveEquipment;
     }
@@ -57,9 +60,6 @@ public abstract class Character {
         return defensiveEquipment;
     }
 
-    public int getMaxLifePoints() {
-        return maxLifePoints;
-    }
 
     // Setters
     public void setType(String newType) {
@@ -78,16 +78,16 @@ public abstract class Character {
         this.lifePoints = newLifePoints;
     }
 
+    public void setMaxLifePoints(int newMaxLifePoints) {
+        this.maxLifePoints = newMaxLifePoints;
+    }
+
     public void setOffensiveEquipment(OffensiveEquipment offensiveEquipment) {
         this.offensiveEquipment = offensiveEquipment;
     }
 
     public void setDefensiveEquipment(DefensiveEquipment defensiveEquipment) {
         this.defensiveEquipment = defensiveEquipment;
-    }
-
-    public void setMaxLifePoints(int newMaxLifePoints) {
-        this.maxLifePoints = newMaxLifePoints;
     }
 
     // Méthode toString
@@ -99,8 +99,8 @@ public abstract class Character {
                 "        il a " + attackLevel + " points d'attaque " +
                 lifePoints + " points de vie (et peut en avoir jusqu'à " +
                 maxLifePoints + ")," +
-                "\n        son équpipement offensif c'est : " + offensiveEquipment +
-                ",\n        et son équipement défensif c'est : " + defensiveEquipment + "." +
+                "\n        son équipement offensif c'est un(e) " + offensiveEquipment.getName() +
+                ",\n        et son équipement défensif c'est un(e) " + defensiveEquipment.getName() + "." +
                 "\n        +---------------+ \n";
     }
 }

@@ -1,9 +1,9 @@
 package fr.campus.dungeoncrawler.Equipment.Offensive;
 
 public abstract class OffensiveEquipment {
-    private String name;
-    private int attack;
-    private String type;                    // weapon ou spell
+    protected String name;
+    protected int attack;
+    protected String type;
 
 // Constructors
 

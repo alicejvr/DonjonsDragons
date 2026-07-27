@@ -11,8 +11,17 @@ public class Board {
             board.add(new Cell("ennemi"));
             board.add(new Cell("arme"));
             board.add(new Cell("potion"));
+        board.add(new Cell("test 5"));
+        board.add(new Cell("test 6"));
+        board.add(new Cell("test 7"));
+        board.add(new Cell("test 8"));
+        board.add(new Cell("test 9"));
+        board.add(new Cell("dernier test"));
+
 
     }
+
+
 // Constructors
 
     public Board(int length) {
