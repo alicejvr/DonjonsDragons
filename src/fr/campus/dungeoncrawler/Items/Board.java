@@ -1,36 +1,31 @@
 package fr.campus.dungeoncrawler.Items;
 
+import fr.campus.dungeoncrawler.Equipment.Defensive.Potion;
+
 import java.util.ArrayList;
 
 public class Board {
-    private int length;
     private ArrayList<Cell> board = new ArrayList<Cell>();
 
-    public void initBoard() {
-            board.add(new Cell("vide"));
-            board.add(new Cell("ennemi"));
-            board.add(new Cell("arme"));
-            board.add(new Cell("potion"));
+
+// Constructors
+
+    public Board() {
+        board.add(new Cell(new Potion("Potion Rouge", 3, "death")));
+        /* board.add(new Cell("ennemi"));
+        board.add(new Cell("arme"));
+        board.add(new Cell("potion"));
         board.add(new Cell("test 5"));
         board.add(new Cell("test 6"));
         board.add(new Cell("test 7"));
         board.add(new Cell("test 8"));
         board.add(new Cell("test 9"));
-        board.add(new Cell("dernier test"));
+        board.add(new Cell("dernier test")); */
 
-
-    }
-
-
-// Constructors
-
-    public Board(int length) {
-        this.length = length;
     }
 
 
 // Getters
-
 
     public ArrayList<Cell> getBoard() {
         return board;
@@ -39,8 +34,8 @@ public class Board {
 
 // Setters
 
-    public void setLength(int length) {
-        this.length = length;
+    public void setBoard(ArrayList<Cell> board) {
+        this.board = board;
     }
 
 
@@ -49,7 +44,6 @@ public class Board {
     @Override
     public String toString() {
         return "Board{" +
-                "length=" + length +
                 ", board=" + board +
                 '}';
     }

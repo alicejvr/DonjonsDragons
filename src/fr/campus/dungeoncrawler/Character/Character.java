@@ -17,13 +17,13 @@ public abstract class Character {
 
 
     public Character(String type, String name, int attackLevel, int lifePoints, int maxLifePoints, OffensiveEquipment offensiveEquipment, DefensiveEquipment defensiveEquipment ) {
-        this.type = type; // this.type = attribut de l'objet, vide tant qu'on a pas créé l'objet
-        // type = paramètre du constructeur
+        this.type = type;
         this.name = name;
         this.attackLevel = attackLevel;
         this.lifePoints = lifePoints;
         this.maxLifePoints = maxLifePoints;
-
+        this.offensiveEquipment = offensiveEquipment;
+        this.defensiveEquipment = defensiveEquipment;
     }
 
 

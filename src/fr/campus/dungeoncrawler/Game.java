@@ -64,8 +64,7 @@ public class Game {
     // mécanique du jeu : le joueur démarre à la case 0 et parcourt les cases du plateau
     public void playTurn() throws OutOfBoardException {
 
-        Board board = new Board(10);
-        board.initBoard();
+        Board board = new Board();
         int playerPosition = 0;      // on initialise la position du player à la case 0
         System.out.println("\nPosition initiale du joueur : case " + playerPosition);
 
@@ -80,7 +79,7 @@ public class Game {
 
                 playerPosition = board.getBoard().size();              // alors la position vaut 64
 
-                System.out.println("Le joueur est sur la case " + playerPosition + "\nContenu de la case : " + board.getBoard().get(playerPosition - 1).getType() + "\n\n+--------------+ Gagné ! Fin de partie ! +--------------+\n");
+                System.out.println("Le joueur est sur la case " + playerPosition + "\nContenu de la case : " + board.getBoard().get(playerPosition - 1).getCellContent() + "\n\n+--------------+ Gagné ! Fin de partie ! +--------------+\n");
                 String playerEndGame = menu.askPlayerString("Choisissez :\n1 = Quitter le jeu\n2 = Recommencer une partie");
                 if (playerEndGame.equals("1")) {
                     System.out.println("Vous avez quitté le jeu.");
@@ -93,10 +92,10 @@ public class Game {
             }
 
             System.out.println("Le joueur est sur la case " + playerPosition);
-            System.out.println("Contenu de la case : " + board.getBoard().get(playerPosition - 1).getType());
+            System.out.println("Contenu de la case : " + board.getBoard().get(playerPosition - 1).getCellContent());
         }
     }
 
-    // Dragon dragon1 = new Dragon("Dragon", "Eragon", 8, 15, 15, new Fireball("Fireball", 5, "Fire"), new Shield("Test", 2, "Test"));
+
 
 }
