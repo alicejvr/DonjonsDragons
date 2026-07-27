@@ -2,14 +2,14 @@ package fr.campus.dungeoncrawler.Equipment.Offensive;
 
 public abstract class OffensiveEquipment {
     protected String name;
-    protected int attack;
+    protected int points;
     protected String type;
 
 // Constructors
 
-    public OffensiveEquipment(String name, int attack, String type) {
+    public OffensiveEquipment(String name, int points, String type) {
         this.name = name;
-        this.attack = attack;
+        this.points = points;
         this.type = type;
     }
 
@@ -18,8 +18,8 @@ public abstract class OffensiveEquipment {
         return name;
     }
 
-    public int getAttack() {
-        return attack;
+    public int getPoints() {
+        return points;
     }
 
     public String getType() {
@@ -32,8 +32,8 @@ public abstract class OffensiveEquipment {
         this.name = newName;
     }
 
-    public void setAttack(int newAttack) {
-        this.attack = newAttack;
+    public void setAttack(int newPoints) {
+        this.points = newPoints;
     }
 
     public void setType(String newType) {
@@ -49,7 +49,7 @@ public abstract class OffensiveEquipment {
     public String toString() {
         return "OffensiveEquipment{" +
                 "name='" + name + '\'' +
-                ", attack=" + attack +
+                ", attack=" + points +
                 ", type='" + type + '\'' +
                 '}';
     }

@@ -3,14 +3,12 @@ package fr.campus.dungeoncrawler.Equipment.Offensive;
 public class Sword extends OffensiveEquipment {
 
 
-    // Constructor
-
-    public Sword(String name, int attack, String type) {
-        super(name, attack, type);
+    public Sword() {
+        super("Epée", 1, "Arme blanche");
     }
 
     @Override
     public String toString() {
-        return "Sword";
+        return "Epée";
     }
 }

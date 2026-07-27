@@ -1,6 +1,14 @@
 package fr.campus.dungeoncrawler.Items;
 
-import fr.campus.dungeoncrawler.Equipment.Defensive.Potion;
+import fr.campus.dungeoncrawler.Character.Enemy.Dragon;
+import fr.campus.dungeoncrawler.Character.Enemy.Goblin;
+import fr.campus.dungeoncrawler.Character.Enemy.Witch;
+import fr.campus.dungeoncrawler.Equipment.Defensive.PotionBig;
+import fr.campus.dungeoncrawler.Equipment.Defensive.PotionClassic;
+import fr.campus.dungeoncrawler.Equipment.Offensive.Fireball;
+import fr.campus.dungeoncrawler.Equipment.Offensive.Flash;
+import fr.campus.dungeoncrawler.Equipment.Offensive.Mace;
+import fr.campus.dungeoncrawler.Equipment.Offensive.Sword;
 
 import java.util.ArrayList;
 
@@ -11,16 +19,16 @@ public class Board {
 // Constructors
 
     public Board() {
-        board.add(new Cell(new Potion("Potion Rouge", 3, "death")));
-        /* board.add(new Cell("ennemi"));
-        board.add(new Cell("arme"));
-        board.add(new Cell("potion"));
-        board.add(new Cell("test 5"));
-        board.add(new Cell("test 6"));
-        board.add(new Cell("test 7"));
-        board.add(new Cell("test 8"));
-        board.add(new Cell("test 9"));
-        board.add(new Cell("dernier test")); */
+        board.add(new Cell(new PotionBig()));
+        board.add(new Cell(new Dragon("Eragon")));
+        board.add(new Cell(new Witch("Bellatrix")));
+        board.add(new Cell(new Goblin("Gimli")));
+        board.add(new Cell(new Mace()));
+        board.add(new Cell(new Sword()));
+        board.add(new Cell(new Flash()));
+        board.add(new Cell(new Fireball()));
+        board.add(new Cell(new PotionClassic()));
+        board.add(new Cell("empty"));
 
     }
 

@@ -3,15 +3,12 @@ package fr.campus.dungeoncrawler.Equipment.Offensive;
 public class Fireball extends OffensiveEquipment {
 
 
-
-    // Constructor
-
-    public Fireball(String name, int attack, String type) {
-        super(name, attack, type);
+    public Fireball() {
+        super("Boules enflammées", 2, "Feu");
     }
 
     @Override
     public String toString() {
-        return "Fireball";
+        return "Boule de feu";
     }
 }

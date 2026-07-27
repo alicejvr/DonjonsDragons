@@ -3,13 +3,12 @@ package fr.campus.dungeoncrawler.Equipment.Offensive;
 public class Flash extends OffensiveEquipment {
 
 
-    // Constructor
-    public Flash(String name, int attack, String type) {
-        super(name, attack, type);
+    public Flash() {
+        super("Eclair", 2, "Flash");
     }
 
     @Override
     public String toString() {
-        return "Flash";
+        return "Eclair";
     }
 }

@@ -16,7 +16,8 @@ public abstract class Character {
 // Constructors
 
 
-    public Character(String type, String name, int attackLevel, int lifePoints, int maxLifePoints, OffensiveEquipment offensiveEquipment, DefensiveEquipment defensiveEquipment ) {
+    public Character(String type, String name, int attackLevel, int lifePoints, int maxLifePoints,
+       OffensiveEquipment offensiveEquipment, DefensiveEquipment defensiveEquipment ) {
         this.type = type;
         this.name = name;
         this.attackLevel = attackLevel;
@@ -97,7 +98,7 @@ public abstract class Character {
         return "        +---------------+ \n        Ton personnage est un " + type + ",\n" +
                 "        il s'appelle " + name + ",\n" +
                 "        il a " + attackLevel + " points d'attaque " +
-                lifePoints + " points de vie (et peut en avoir jusqu'à " +
+                lifePoints + " points de vie (et peut en avoir maximum " +
                 maxLifePoints + ")," +
                 "\n        son équipement offensif c'est un(e) " + offensiveEquipment.getName() +
                 ",\n        et son équipement défensif c'est un(e) " + defensiveEquipment.getName() + "." +

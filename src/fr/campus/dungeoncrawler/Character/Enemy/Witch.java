@@ -1,12 +1,15 @@
 package fr.campus.dungeoncrawler.Character.Enemy;
 
 import fr.campus.dungeoncrawler.Character.Character;
-import fr.campus.dungeoncrawler.Equipment.Defensive.DefensiveEquipment;
-import fr.campus.dungeoncrawler.Equipment.Offensive.OffensiveEquipment;
+import fr.campus.dungeoncrawler.Equipment.Defensive.PotionClassic;
+import fr.campus.dungeoncrawler.Equipment.Offensive.Spell;
 
 public class Witch extends Character {
-    protected Witch(String type, String name, int attackLevel, int lifePoints, int maxLifePoints, OffensiveEquipment offensiveEquipment, DefensiveEquipment defensiveEquipment) {
-        super(type, name, attackLevel, lifePoints, maxLifePoints, offensiveEquipment, defensiveEquipment);
+
+    public Witch(String name) {
+        super("Sorcier", name, 5, 8, 8,
+                new Spell("Petrificus", 5, "Petrification Spell"),
+                new PotionClassic());
     }
 
     @Override

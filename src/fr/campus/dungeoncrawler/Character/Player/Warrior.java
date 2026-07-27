@@ -5,15 +5,17 @@ import fr.campus.dungeoncrawler.Equipment.Defensive.Shield;
 import fr.campus.dungeoncrawler.Equipment.Offensive.Weapon;
 
 public class Warrior extends Character {
-    /**
-     *
-     * @param name
-     */
-    // Constructor
+
     public Warrior(String name) {
-        super("Warrior", name, 5, 10, 10,  new Weapon("Dague", 3, "weapon"), new Shield("Bouclier", 3, "shield"));
+        super("Warrior", name, 5, 10, 10,
+                new Weapon("Dague", 3, "Arme blanche"),
+                new Shield("Bouclier doré", 3, "défense"));
     }
 
 
+    @Override
+    public String toString() {
+        return "Warrior";
+    }
 }
 

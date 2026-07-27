@@ -3,14 +3,13 @@ package fr.campus.dungeoncrawler.Equipment.Defensive;
 public class PotionClassic extends DefensiveEquipment{
 
 
-    // Constructor
-    public PotionClassic(String name, int defense, String type) {
-        super(name, defense, type);
+    public PotionClassic() {
+        super("Potion verte", 2, "soin");
     }
 
 
     @Override
     public String toString() {
-        return "PotionClassic";
+        return "Potion standard";
     }
 }

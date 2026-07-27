@@ -3,15 +3,13 @@ package fr.campus.dungeoncrawler.Equipment.Offensive;
 public class Mace extends OffensiveEquipment {
 
 
-
-    // Constructor
-    public Mace(String name, int attack, String type) {
-        super(name, attack, type);
+    public Mace() {
+        super("Grande massue", 2, "Massue");
     }
 
 
     @Override
     public String toString() {
-        return "Mace";
+        return "Massue";
     }
 }
