@@ -1,11 +1,9 @@
 package fr.campus.dungeoncrawler.Character.Enemy;
 
 import fr.campus.dungeoncrawler.Character.Character;
-import fr.campus.dungeoncrawler.Equipment.Defensive.DefensiveEquipment;
 import fr.campus.dungeoncrawler.Equipment.Defensive.PotionClassic;
-import fr.campus.dungeoncrawler.Equipment.Offensive.Fireball;
-import fr.campus.dungeoncrawler.Equipment.Offensive.Flash;
-import fr.campus.dungeoncrawler.Equipment.Offensive.OffensiveEquipment;
+import fr.campus.dungeoncrawler.Equipment.Offensive.Spell.Fireball;
+
 
 public class Dragon extends Character {
 
@@ -17,6 +15,6 @@ public class Dragon extends Character {
 
     @Override
     public String toString() {
-        return "Dragon";
+        return "dragon";
     }
 }

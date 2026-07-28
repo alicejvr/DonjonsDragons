@@ -1,11 +1,9 @@
 package fr.campus.dungeoncrawler.Character.Enemy;
 
 import fr.campus.dungeoncrawler.Character.Character;
-import fr.campus.dungeoncrawler.Equipment.Defensive.DefensiveEquipment;
 import fr.campus.dungeoncrawler.Equipment.Defensive.PotionClassic;
-import fr.campus.dungeoncrawler.Equipment.Offensive.Fireball;
-import fr.campus.dungeoncrawler.Equipment.Offensive.Mace;
-import fr.campus.dungeoncrawler.Equipment.Offensive.OffensiveEquipment;
+import fr.campus.dungeoncrawler.Equipment.Offensive.Weapon.Mace;
+
 
 public class Goblin extends Character {
 
@@ -18,6 +16,6 @@ public class Goblin extends Character {
 
     @Override
     public String toString() {
-        return "Goblin";
+        return "goblin";
     }
 }

@@ -4,12 +4,12 @@ public class PotionBig extends DefensiveEquipment {
 
 
     public PotionBig() {
-        super("Potion Rouge", 3, "death");
+        super("grande potion", 5, "Increase lifePoints");
     }
 
 
     @Override
     public String toString() {
-        return "Grande potion";
+        return "grande potion";
     }
 }

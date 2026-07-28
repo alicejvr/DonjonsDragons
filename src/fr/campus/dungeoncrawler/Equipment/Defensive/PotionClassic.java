@@ -4,12 +4,12 @@ public class PotionClassic extends DefensiveEquipment{
 
 
     public PotionClassic() {
-        super("Potion verte", 2, "soin");
+        super("potion standard", 2, "Increase lifePoints");
     }
 
 
     @Override
     public String toString() {
-        return "Potion standard";
+        return "potion standard";
     }
 }

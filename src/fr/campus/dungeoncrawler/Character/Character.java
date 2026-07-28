@@ -4,7 +4,7 @@ import fr.campus.dungeoncrawler.Equipment.Defensive.DefensiveEquipment;
 import fr.campus.dungeoncrawler.Equipment.Offensive.OffensiveEquipment;
 
 public abstract class Character {
-    protected String type;                            // warrior ou wizard
+    protected String type;
     protected String name;
     protected int attackLevel;
     protected int lifePoints;
@@ -91,17 +91,5 @@ public abstract class Character {
         this.defensiveEquipment = defensiveEquipment;
     }
 
-    // Méthode toString
 
-    @Override
-    public String toString() {
-        return "        +---------------+ \n        Ton personnage est un " + type + ",\n" +
-                "        il s'appelle " + name + ",\n" +
-                "        il a " + attackLevel + " points d'attaque " +
-                lifePoints + " points de vie (et peut en avoir maximum " +
-                maxLifePoints + ")," +
-                "\n        son équipement offensif c'est un(e) " + offensiveEquipment.getName() +
-                ",\n        et son équipement défensif c'est un(e) " + defensiveEquipment.getName() + "." +
-                "\n        +---------------+ \n";
-    }
 }
