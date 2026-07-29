@@ -3,6 +3,17 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 .kotlin
+.idea/
+*.iml
+*.iws
+*.ipr
+*.class
+target/
+build/
+
+### Logs ###
+
+*.log
 
 ### Eclipse ###
 .apt_generated
@@ -28,3 +39,12 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+### Windows ###
+
+Thumbs.db
+Desktop.ini
+
+###  Files environnement local ###
+
+.env
