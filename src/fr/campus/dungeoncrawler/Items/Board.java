@@ -76,13 +76,4 @@ public class Board {
         this.board = board;
     }
 
-
-// Méthode toString
-    @Override
-    public String toString() {
-        return "Board{" +
-                ", board=" + board +
-                '}';
-    }
-
 }

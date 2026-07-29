@@ -36,25 +36,44 @@ public class Cell<T> {
         if (((this.cellContent instanceof Mace) || (this.cellContent instanceof Sword)) && (c instanceof Warrior)) {
             OffensiveEquipment theWeapon = (OffensiveEquipment) cellContent;
             c.setAttackLevel(c.getAttackLevel() + theWeapon.getPoints());
-            System.out.println("-*-*-*- "+ c.getName() +" gagne " + theWeapon.getPoints() + " points d'attaque !");
+            System.out.println("-*- " + c.getName() + " gagne " + theWeapon.getPoints() + " points d'attaque ! -*-");
 
         } else if (((this.cellContent instanceof Fireball) || (this.cellContent instanceof Flash)) && (c instanceof Wizard)) {
             OffensiveEquipment theWeapon = (OffensiveEquipment) cellContent;
             c.setAttackLevel(c.getAttackLevel() + theWeapon.getPoints());
-            System.out.println("-*-*-*- "+ c.getName() +" gagne " + theWeapon.getPoints() + " points d'attaque !");
+            System.out.println("-*- " + c.getName() + " gagne " + theWeapon.getPoints() + " points d'attaque ! -*-");
         }
 
         if ((this.cellContent instanceof PotionBig) || (this.cellContent instanceof PotionClassic)) {
             DefensiveEquipment thePotion = (DefensiveEquipment) cellContent;
             c.setLifePoints(c.getLifePoints() + thePotion.getPoints());
-            System.out.println("-*-*-*- "+ c.getName() +" gagne " + thePotion.getPoints() +" points de vie !");
+            System.out.println("-*- " + c.getName() + " gagne " + thePotion.getPoints() + " points de vie ! -*-");
         }
 
         if ((this.cellContent instanceof Dragon) || (this.cellContent instanceof Witch) || (this.cellContent instanceof Goblin)) {
-            System.out.println("-*-*-*- "+ c.getName() +" attaque !");
+            int heroLife = c.getLifePoints();
+            int heroStrength = c.getAttackLevel();
+
+            Character theEnemy = (Character) cellContent;
+            int enemyLife = theEnemy.getLifePoints();
+            int enemyStrength = theEnemy.getAttackLevel();
+
+            System.out.println(">>> " + c.getName() + " tombe sur l'ennemi et l'attaque <<<");
+            System.out.println("Points de vie de l'ennemi avant l'attaque : " + theEnemy.getLifePoints());
+            theEnemy.setLifePoints(enemyLife - heroStrength);
+            System.out.println("Points de vie de l'ennemi après l'attaque : " + theEnemy.getLifePoints());
 
 
+            if ((theEnemy.getLifePoints()) <= 0) {
+                System.out.println("Bravo, l'ennemi est mort !");
+            } else {
+                c.setLifePoints(heroLife - enemyStrength);
+                System.out.println("L'ennemi vous a frappé et s'est enfuit");
+                System.out.println("Niveau de vie restant : " + c.getLifePoints());
+            }
         }
+
+
     }
 
 

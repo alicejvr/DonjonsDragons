@@ -61,7 +61,7 @@ public class Game {
 
         Board board = new Board();
         int playerPosition = 0;      // on initialise la position du player à la case 0
-        System.out.println("\nPosition initiale du joueur : case " + playerPosition);
+        System.out.println("\nPosition initiale de "+ playerChoice.getName() +" : case " + playerPosition);
 
         while (playerPosition <= board.getCells().size()) {     // tant que la position du joueur est inférieure ou égale à la taille du board,
 
@@ -87,15 +87,21 @@ public class Game {
                 throw new OutOfBoardException("Erreur");
             }
 
-            System.out.println(playerChoice.getName() +" est sur la case " + playerPosition);
+            System.out.println(playerChoice.getName() + " est sur la case " + playerPosition);
             System.out.println("Contenu de la case : " + board.getCells().get(playerPosition - 1).getCellContent());
 
             board.getCells().get(playerPosition - 1).interact(playerChoice);
-            System.out.println("{ "+ playerChoice.getAttackLevel()+ " points d'attaque }");
-            System.out.println("{ "+ playerChoice.getLifePoints()+ " points de vie }");
-            }
+            System.out.println("{ " + playerChoice.getAttackLevel() + " points d'attaque / "+ playerChoice.getLifePoints() + " points de vie }");
+        }
+
+        // fin de partie : le player perd n'a plus de points de vie
+        if (playerChoice.getLifePoints() == 0) {
+            System.out.println("\n\n+--------------+ "+ playerChoice.getName() +" est mort ! Vous avez perdu ! Fin de partie +--------------+\n");
+            System.exit(1);
         }
     }
+
+}
 
 
 
