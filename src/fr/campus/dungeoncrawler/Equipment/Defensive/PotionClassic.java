@@ -8,6 +8,7 @@ public class PotionClassic extends DefensiveEquipment{
     }
 
 
+
     @Override
     public String toString() {
         return "potion standard";

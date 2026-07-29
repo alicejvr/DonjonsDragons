@@ -14,7 +14,6 @@ public class Game {
     // Board board = new Board();
 
     public void start() throws OutOfBoardException {
-
         String playerInputIntro = menu.askPlayerString("\n\n+--------------+ Bienvenue sur Dungeon Crawler ! +--------------+\n\nFaites votre choix :\n1 = Créer un nouveau personnage\n2 = Quitter le jeu");
         if (playerInputIntro.equals("1")) {
             characterMenu();
@@ -25,8 +24,6 @@ public class Game {
 
     // menu d'introduction pour choisir son personnage (Warrior/Wizard), le nommer, modifier ses infos et lancer une partie
     public void characterMenu() throws OutOfBoardException {
-        // Character playerChoice;
-
         String playerInputType = menu.askPlayerString("\nChoisissez :\n1 = Wizard\n2 = Warrior\n[ Vous pouvez quitter le jeu à tout moment en tapant Q ]");
 
         String playerName = menu.askPlayerString("\nNommez votre personnage :");
@@ -43,9 +40,9 @@ public class Game {
             String playerModif = menu.askPlayerString("Vous souhaitez modifier :\n1. Son niveau d'attaque\n2. Son niveau de vie");
             if (playerModif.equals("1")) {
                 menu.askPlayerString("Entrez le nouveau niveau d'attaque de " + playerName + " :");
-            } else {
+            } else { // TODO modif attackLevel
                 menu.askPlayerString("Entrez le nouveau niveau de vie de " + playerName + " :");
-            }
+            } // TODO modif lifePoints
         }
         String playerStart = menu.askPlayerString("\nTapez 'go' pour lancer votre partie !");
         if (playerStart.equalsIgnoreCase("Go")) {   // si le player tape go ça lance le jeu
@@ -90,10 +87,12 @@ public class Game {
                 throw new OutOfBoardException("Erreur");
             }
 
-            System.out.println("Le joueur est sur la case " + playerPosition);
+            System.out.println(playerChoice.getName() +" est sur la case " + playerPosition);
             System.out.println("Contenu de la case : " + board.getCells().get(playerPosition - 1).getCellContent());
 
             board.getCells().get(playerPosition - 1).interact(playerChoice);
+            System.out.println("{ "+ playerChoice.getAttackLevel()+ " points d'attaque }");
+            System.out.println("{ "+ playerChoice.getLifePoints()+ " points de vie }");
             }
         }
     }
