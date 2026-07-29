@@ -15,7 +15,7 @@ public class Dice {
 
     // Constructors
     public Dice() {
-        this.sides = 1;
+        this.sides = 6;
     }
 
 // Getter
